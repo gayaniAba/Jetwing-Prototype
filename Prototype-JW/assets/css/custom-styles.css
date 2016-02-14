@@ -1,0 +1,1 @@
+/* Application custom styles *//* Base colours */body{	color:#666666;}.magenta{	color:#F30AA8;}.grey-medium{	color:#666666;}.bg-white{	background-color:#ffffff !important;}/* Element Positioning */.center-content{	margin:0 auto;}.center-text{	text-align:center;}/* Angular material overrides */

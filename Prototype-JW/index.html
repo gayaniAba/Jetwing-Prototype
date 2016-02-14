@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<title>Jetwing Travels | Admin Portal</title>
+		<link rel="shortcut icon" type="image/x-icon" href="assets/images/jetwing.ico">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+		<link rel="stylesheet" href="assets/css/angular-material/angular-material.css"/>
+		<link rel="stylesheet" href="assets/css/custom-styles.css"/>
+		<style type="text/css">
+			/**
+			 * Hide when Angular is not yet loaded and initialized
+			 */
+			[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+			  display: none !important;
+			}
+		</style>
+	</head>
+	<body ng-app="jetwingAdminProtal">
+		<!-- Placeholder for views -->
+			<div ng-view=""></div>
+		<!-- /Placeholder for views -->
+		<script src="assets/js/angular/angular.js"></script>
+		<script src="assets/js/angular-route/angular-route.js"></script>
+		<script src="assets/js/angular-animate/angular-animate.js"></script>
+		<script src="assets/js/angular-aria/angular-aria.js"></script>
+		<script type="text/javascript" src="assets/js/angular-material/angular-material.js"></script>
+		<script type="text/javascript">	 
+			var jetwingAdminProtal = angular.module('jetwingAdminProtal',['ngRoute','ngMaterial']);
+			jetwingAdminProtal.config(function($routeProvider,$mdThemingProvider){
+									$routeProvider
+									.when('/login',{templateUrl : 'partials/login/login.html' })
+									.when('/home',{templateUrl : 'partials/home/home.html' })
+									.otherwise({ redirectTo : '/login'});
+									$mdThemingProvider.definePalette('amazingPaletteName', {
+    '50': 'ffebee',
+    '100': 'ffcdd2',
+    '200': 'ef9a9a',
+    '300': 'e57373',
+    '400': 'ef5350',
+    '500': '7f7a00',
+    '600': 'e53935',
+    '700': 'd32f2f',
+    '800': 'c62828',
+    '900': 'b71c1c',
+    'A100': 'ff8a80',
+    'A200': 'ff5252',
+    'A400': 'ff1744',
+    'A700': 'd50000',
+    'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
+                                        // on this palette should be dark or light
+    'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
+     '200', '300', '400', 'A100'],
+    'contrastLightColors': undefined    // could also specify this if default was 'dark'
+  });
+  $mdThemingProvider.theme('default')
+    .primaryPalette('amazingPaletteName')
+									
+									
+									});
+			jetwingAdminProtal.controller('Cntrl', function($scope,$location) {
+				$scope.changeView = function(view){
+					$location.path(view); // path not hash
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<div layout="row" layout-align="center" class="md-padding">
+		<div flex="40" flex-xs="100" flex-sm="60">
+		<md-content class="md-padding">
+				<md-card>
+					<div layout="row" layout-align="center">
+						<div flex="50" class="md-padding">
+							<img src="assets/images/Jetwing-Travels-PNG.png">
+						</div>
+					</div>
+					<!-- Login form -->
+					<md-card-content>
+						<form name="loginForm">
+							<md-input-container class="md-block">
+								<label>Username</label>
+								<input type="text" required name="userName" ng-model="user.userName">
+								<div ng-messages="loginForm.userName.$error">
+								  <div ng-message="required">This is required.</div>
+								</div>
+							</md-input-container>
+							<md-input-container class="md-block">
+								<label>Password</label>
+								<input type="password" required name="password" ng-model="user.password">
+								<div ng-messages="loginForm.password.$error">
+								  <div ng-message="required">This is required.</div>
+								</div>
+							</md-input-container>
+							<md-card-actions layout="row"> 
+								<div ng-init="goHomepg='home.html'">
+									<a ng-href="{{goHomepg}}">Forgot password?</a>
+									 <a href="#home">Home</a>
+								</div>
+								<span flex></span>
+								<md-button class="md-raised md-primary" ng-click="changeView('home')">Login</md-button>
+							</md-card-actions>
+						</form>
+					</md-card-content>
+					<!-- /Login form -->
+				</md-card>
+		</md-card-content>
+		</div>
+	</div>

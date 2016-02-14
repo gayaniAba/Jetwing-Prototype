@@ -1,0 +1,84 @@
+<div layout="row" ng-cloak>
+	<!-- Side Navigation -->
+	<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+		<div class="md-whiteframe-z1 md-padding">
+			<img src="assets/images/Jetwing-Travels-PNG.png" class="layout-align-center-center">
+		</div>
+		<div ng-init="data=[{name:'About Sri Lanka',children:[{name:'Attractions'},{name:'Events and Festivals'},{name:'Beaches'},{name:'Waterfalls'},{name:'Flora and Fauna'},{name:'Sri Lankan Food'}]},
+		{name:'Why Sri Lanka'},{name:'Cities in Sri Lanka'}]">
+			<md-list>
+				<md-list-item ng-repeat="item in data">
+					<md-card-actions layout="column" layout-align="start" flex="100">
+						<md-button class="md-primary">
+							{{item.name}}
+						</md-button>
+						<md-list>
+							<md-list-item ng-repeat="child in item.children">
+							  <md-button flex="100" class="md-scondary magenta">
+								{{child.name}}
+							  </md-button>
+							</md-list-item>
+						</md-list>
+					</md-card-actions>
+				</md-list-item>
+			</md-list>
+		</div>
+	</md-sidenav>
+	<!-- /Side Navigation -->
+	<!-- Page title -->
+ <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+    <md-toolbar layout="row" class="md-whiteframe-z1 bg-white">
+		<md-button class="menu" hide-gt-sm ng-click="toggleLeft()">
+				<md-icon md-svg-icon="assets/images/menu.svg"></md-icon>
+		</md-button>
+		<div layout="column" flex="80">
+			<span class="md-display-1 md-padding center-text grey-medium">Jetwing Travels CMS</span>
+		</div>
+		<span flex></span>
+		<span class="md-subhead md-padding grey-medium">Welcome UserName</span>
+    </md-toolbar>
+    <md-content flex id="content" class="md-padding">
+		<md-card>
+			<md-card-title>
+			  <md-card-title-text>
+				<span class="md-headline">Action buttons</span>
+			  </md-card-title-text>
+			</md-card-title>
+			<md-card-content>
+			  <p>
+				The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+				two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+			  </p>
+			  <p>
+				The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+				two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+			  </p>
+			  <p>
+				The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+				two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+			  </p>
+			</md-card-content>
+			<md-card-actions layout="row" layout-align="end center">
+			  <md-button>Action 1</md-button>
+			  <md-button>Action 2</md-button>
+			</md-card-actions>
+		</md-card>
+     </md-content>
+  </div>
+
+	<!--<md-toolbar flex layout="column" tabIndex="-1" role="main" flex="100">
+		<div layout="row" class="md-whiteframe-z2">
+			<md-button id="main" class="menu" hide-gt-sm ng-click="toggleLeft()">
+				<md-icon md-svg-icon="assets/images/menu.svg"></md-icon>
+			</md-button>
+			<div layout="column" flex="80">
+				<span class="md-display-1 md-padding center-text">Jetwing Travels CMS</span>
+			</div>
+			<span flex></span>
+			<span class="md-subhead md-padding">Welcome UserName</span>
+		</div>
+	</md-toolbar>-->
+	<!-- /Page title -->
+	<!-- Page content -->
+	<!-- /Page content -->
+</div>
